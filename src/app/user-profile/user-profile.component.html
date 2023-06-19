@@ -3,4 +3,12 @@
   <span class="role">({{ role }}) </span>
 
   <button (click)="seleccionar()">Seleccionar</button>
+  <br />
+  <p *ngIf="role === 'Admin'; else textoOperador">
+    Tienes poderes de administración. Úsese con moderación
+  </p>
 </div>
+
+<ng-template #textoOperador>
+  <p>Operador. Sólo tiene derechos de lectura y poco más</p>
+</ng-template>
