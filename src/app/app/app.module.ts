@@ -11,7 +11,7 @@ import { Logger2Service } from '../services/logger2.service';
   declarations: [AppComponent, UserProfileComponent],
   imports: [BrowserModule, FormsModule],
   providers: [
-    LoggerService, // tal cual
+    //LoggerService, // tal cual
     // te pida LoggerService -> Logger2Service
     //{ provide: LoggerService, useClass: Logger2Service },
   ],

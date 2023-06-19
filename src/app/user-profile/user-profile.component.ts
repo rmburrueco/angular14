@@ -25,7 +25,10 @@ export enum Roles {
   selector: 'app-user-profile',
   templateUrl: './user-profile.component.html',
   styleUrls: ['./user-profile.component.scss'],
-  providers: [{ provide: LoggerService, useClass: Logger2Service }],
+  providers: [
+    //{ provide: LoggerService, useClass: Logger2Service }
+    //si inyectamos el servicio aquí -> hay una copia de cada servicio del logger
+  ],
 })
 export class UserProfileComponent implements OnInit, OnDestroy, OnChanges {
   @Input()
