@@ -4,7 +4,7 @@
 
   <button (click)="seleccionar()">Seleccionar</button>
   <br />
-  <p *ngIf="role === 'Admin'; else textoOperador">
+  <p *ngIf="isAdmin; else textoOperador">
     Tienes poderes de administración. Úsese con moderación
   </p>
 </div>
