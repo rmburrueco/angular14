@@ -4,11 +4,12 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { UserProfileComponent } from '../user-profile/user-profile.component';
+import { LoggerService } from '../services/logger.service';
 
 @NgModule({
   declarations: [AppComponent, UserProfileComponent],
   imports: [BrowserModule, FormsModule],
-  providers: [],
+  providers: [LoggerService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -8,6 +8,7 @@ import {
   OnChanges,
   SimpleChanges,
 } from '@angular/core';
+import { LoggerService } from '../services/logger.service';
 
 export interface User {
   name: string;
@@ -35,8 +36,8 @@ export class UserProfileComponent implements OnInit, OnDestroy, OnChanges {
   @Output()
   selected = new EventEmitter<User>();
 
-  constructor() {
-    console.log('1. userProfile. constructor');
+  constructor(private logger: LoggerService) {
+    this.logger.log('1. userProfile. constructor');
   }
 
   get isAdmin(): boolean {
@@ -44,21 +45,21 @@ export class UserProfileComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   ngOnInit(): void {
-    console.log('2. userProfile. OnInit');
+    this.logger.log('2. userProfile. OnInit');
   }
 
   ngOnDestroy(): void {
-    console.log('3. userProfile. OnDestroy');
+    this.logger.log('3. userProfile. OnDestroy');
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log(changes);
+    this.logger.log(changes);
   }
 
   seleccionar() {
     //const nombreCompleto = this.firstName + ' ' + this.lastName;
     const nombreCompleto = `${this.firstName} ${this.lastName}`;
-    console.log(nombreCompleto);
+    this.logger.log(nombreCompleto);
 
     this.selected.emit({ name: nombreCompleto, role: this.role });
   }
