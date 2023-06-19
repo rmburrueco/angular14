@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../user-profile/user-profile.component';
+import { LoggerService } from '../services/logger.service';
 
 interface Persona {
   firstName: string;
@@ -33,16 +34,16 @@ export class AppComponent implements OnInit {
     },
   ];
 
-  constructor() {
-    console.log('1. appcomponent constructor');
+  constructor(private logger: LoggerService) {
+    this.logger.log('1. appcomponent constructor');
   }
 
   ngOnInit(): void {
-    console.log('2. appcomponent OnInit');
+    this.logger.log('2. appcomponent OnInit');
   }
 
   onUserSelect(user: User): void {
-    console.log(
+    this.logger.log(
       `AppComponent. Se ha seleccionado el usuario
         ${user.name} con rol ${user.role}`
     ); //${nombre}
