@@ -9,6 +9,7 @@ import {
   SimpleChanges,
 } from '@angular/core';
 import { LoggerService } from '../services/logger.service';
+import { Logger2Service } from '../services/logger2.service';
 
 export interface User {
   name: string;
@@ -24,6 +25,7 @@ export enum Roles {
   selector: 'app-user-profile',
   templateUrl: './user-profile.component.html',
   styleUrls: ['./user-profile.component.scss'],
+  providers: [{ provide: LoggerService, useClass: Logger2Service }],
 })
 export class UserProfileComponent implements OnInit, OnDestroy, OnChanges {
   @Input()
