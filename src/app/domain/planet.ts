@@ -1,4 +1,4 @@
-export interface Planet {
+export interface PlanetDto {
   name: string;
   rotation_period: string;
   orbital_period: string;
@@ -12,5 +12,22 @@ export interface Planet {
   films: string[];
   created: string;
   edited: string;
+  url: string;
+}
+
+export interface Planet {
+  name: string;
+  rotationPeriod: number;
+  orbitalPeriod: number;
+  diameter: number;
+  climate: string;
+  gravity: number;
+  terrain: string;
+  surfaceWater: number;
+  population: number;
+  residents: string[];
+  films: string[];
+  created: Date;
+  edited: Date;
   url: string;
 }
