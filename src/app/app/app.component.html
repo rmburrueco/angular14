@@ -13,4 +13,14 @@
   </app-user-profile>
 
   <app-planet-list></app-planet-list>
+
+  <button (click)="consultar1()" > Consultar planeta</button>
+  <button (click)="consultar2()" > Consultar persona</button>
+  <button (click)="consultar3()" > Consultar composición</button>
+
+  <div>
+    <pre>
+      {{objeto | json}}
+    </pre>
+  </div>
 </div>

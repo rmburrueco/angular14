@@ -1,10 +1,15 @@
 import { TestBed } from '@angular/core/testing';
+import { PlanetListComponent } from '../planet/planet-list/planet-list.component';
+import { PlanetService } from '../services/planet.service';
 import { AppComponent } from './app.component';
+
+class PlanetServiceMock {}
 
 describe('AppComponent', () => {
   beforeEach(() =>
     TestBed.configureTestingModule({
-      declarations: [AppComponent],
+      declarations: [AppComponent, PlanetListComponent],
+      providers: [{ provide: PlanetService, useClass: PlanetServiceMock }],
     })
   );
 
@@ -14,9 +19,9 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'angular14'`, () => {
+  it(`should have as title 'mi aplicacion 23'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('angular14');
+    expect(app.title).toEqual('mi aplicacion 23');
   });
 });
