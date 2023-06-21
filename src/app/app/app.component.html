@@ -17,10 +17,12 @@
   <button (click)="consultar1()" > Consultar planeta</button>
   <button (click)="consultar2()" > Consultar persona</button>
   <button (click)="consultar3()" > Consultar composición</button>
-
+  <button (click)="consultar4()">
+    Consultar la composicion refactorizada en servicio
+  </button>
   <div>
     <pre>
-      {{objeto | json}}
+      {{ objeto | json }}
     </pre>
   </div>
 </div>
