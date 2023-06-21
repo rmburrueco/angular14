@@ -19,6 +19,8 @@ interface Persona {
 export class AppComponent implements OnInit {
   title = 'mi aplicacion 23';
   objeto: any = null;
+  texto = 'Hola. Texto de prueba para pipe';
+  d1 = new Date('2023-05-01');
 
   personas: Persona[] = [
     {
