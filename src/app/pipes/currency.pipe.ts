@@ -4,22 +4,19 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'currency'
 })
 export class CurrencyPipe implements PipeTransform {
-
   transform(value: number | undefined | null, currencyCode = 'EUR'): unknown {
-    if (value === null || value === undefined){
+    if (value === null || value === undefined) {
       return '-';
     }
 
-    if (currencyCode === 'EUR'){
+    if (currencyCode === 'EUR') {
       return `${value.toFixed(2)} €`;
     }
 
-    if (currencyCode === 'USD'){
+    if (currencyCode === 'USD') {
       return '$ ' + value.toFixed(2);
     }
-    
-    return '';
 
+    return value.toFixed(2) + ' ' + currencyCode;
   }
-
 }

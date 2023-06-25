@@ -16,4 +16,8 @@ describe('CurrencyPipe', () => {
     expect(pipe.transform(12345.678, 'USD')).toEqual('$ 12345.68');
   });
 
+  it('should return - when using null', () => {
+    const pipe = new CurrencyPipe();
+    expect(pipe.transform(null, 'USD')).toEqual('-');
+  });
 });

@@ -1,7 +1,8 @@
 <h1 class="titular">Hola {{ title }}</h1>
 <p>Un párrafo: {{ 2 + 1 * 3 }}</p>
 
-<p> {{ texto | lowercase }} </p>
+<p>{{ texto | lowercase }}</p>
+<p>{{ dinero | currency : 'EUR' }}</p>
 
 <div>
   <h2>Listado de personas</h2>
@@ -16,9 +17,9 @@
 
   <app-planet-list></app-planet-list>
 
-  <button (click)="consultar1()" > Consultar planeta</button>
-  <button (click)="consultar2()" > Consultar persona</button>
-  <button (click)="consultar3()" > Consultar composición</button>
+  <button (click)="consultar1()">Consultar planeta</button>
+  <button (click)="consultar2()">Consultar persona</button>
+  <button (click)="consultar3()">Consultar composición</button>
   <button (click)="consultar4()">
     Consultar la composicion refactorizada en servicio
   </button>

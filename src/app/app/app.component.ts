@@ -22,6 +22,7 @@ export class AppComponent implements OnInit {
   objeto: Person | Planet | Compuesto | undefined | unknown = undefined;
   texto = 'Hola. Texto de prueba para pipe';
   d1 = new Date('2023-05-01');
+  dinero = 12345.678;
 
   personas: Persona[] = [
     {
