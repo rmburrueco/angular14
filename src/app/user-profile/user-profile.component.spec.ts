@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-empty-function */
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 import { UserProfileComponent } from './user-profile.component';
@@ -15,7 +17,7 @@ describe('UserProfileComponent', () => {
     TestBed.configureTestingModule({
       declarations: [UserProfileComponent],
       imports: [FormsModule],
-      providers: [{ providers: LoggerService, useClass: LoggerMock }],
+      providers: [{ providers: LoggerService, useClass: LoggerMock }]
     });
     fixture = TestBed.createComponent(UserProfileComponent);
     component = fixture.componentInstance;

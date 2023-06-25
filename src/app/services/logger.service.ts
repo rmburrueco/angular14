@@ -3,18 +3,18 @@ import { Injectable } from '@angular/core';
 let seq = 1;
 @Injectable({ providedIn: 'root' }) //quien lo pida, se lo das
 export class LoggerService {
-  id: number = 0;
+  id = 0;
   constructor() {
     this.id = seq++;
   }
 
-  log(msg: any) {
+  log(msg: unknown) {
     console.log(this.id + ' ' + msg);
   }
-  error(msg: any) {
+  error(msg: unknown) {
     console.error(msg);
   }
-  warn(msg: any) {
+  warn(msg: unknown) {
     console.warn(msg);
   }
 }

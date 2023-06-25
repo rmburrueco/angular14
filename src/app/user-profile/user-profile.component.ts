@@ -6,10 +6,9 @@ import {
   OnInit,
   OnDestroy,
   OnChanges,
-  SimpleChanges,
+  SimpleChanges
 } from '@angular/core';
 import { LoggerService } from '../services/logger.service';
-import { Logger2Service } from '../services/logger2.service';
 
 export interface User {
   name: string;
@@ -18,7 +17,7 @@ export interface User {
 
 export enum Roles {
   Admin = 'Admin',
-  Operador = 'Operador',
+  Operador = 'Operador'
 }
 
 @Component({
@@ -28,15 +27,15 @@ export enum Roles {
   providers: [
     //{ provide: LoggerService, useClass: Logger2Service }
     //si inyectamos el servicio aquí -> hay una copia de cada servicio del logger
-  ],
+  ]
 })
 export class UserProfileComponent implements OnInit, OnDestroy, OnChanges {
   @Input()
-  firstName: string = '';
+  firstName = '';
   @Input()
-  lastName: string = '';
+  lastName = '';
   @Input()
-  role: string = '';
+  role = '';
 
   @Output()
   selected = new EventEmitter<User>();

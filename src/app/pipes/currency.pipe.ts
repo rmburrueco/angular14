@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class CurrencyPipe implements PipeTransform {
 
-  transform(value: number | undefined | null, currencyCode: string = 'EUR'): unknown {
+  transform(value: number | undefined | null, currencyCode = 'EUR'): unknown {
     if (value === null || value === undefined){
       return '-';
     }

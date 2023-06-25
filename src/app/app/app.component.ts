@@ -4,6 +4,7 @@ import { Planet } from '../domain/planet';
 import { LoggerService } from '../services/logger.service';
 import { Compuesto, PlanetService } from '../services/planet.service';
 import { User } from '../user-profile/user-profile.component';
+import { Person } from '../domain/person';
 
 interface Persona {
   firstName: string;
@@ -14,11 +15,11 @@ interface Persona {
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
   title = 'mi aplicacion 23';
-  objeto: any = null;
+  objeto: Person | Planet | Compuesto | undefined | unknown = undefined;
   texto = 'Hola. Texto de prueba para pipe';
   d1 = new Date('2023-05-01');
 
@@ -26,18 +27,18 @@ export class AppComponent implements OnInit {
     {
       firstName: 'Jesica',
       lastName: 'Alba',
-      role: 'Admin',
+      role: 'Admin'
     },
     {
       firstName: 'Pepe',
       lastName: 'Lopez',
-      role: 'Operador',
+      role: 'Operador'
     },
     {
       firstName: 'Maria',
       lastName: 'Zamora',
-      role: 'Admin',
-    },
+      role: 'Admin'
+    }
   ];
 
   constructor(
@@ -61,14 +62,14 @@ export class AppComponent implements OnInit {
     this.planetService.getPlanet(1).subscribe({
       next: (data) => {
         this.objeto = data;
-      },
+      }
     });
   }
   consultar2(): void {
     this.planetService.getPerson(1).subscribe({
       next: (data) => {
         this.objeto = data;
-      },
+      }
     });
   }
   consultar3(): void {
@@ -99,7 +100,7 @@ export class AppComponent implements OnInit {
         },
         error: (err) => {
           this.objeto = { error: err };
-        },
+        }
       });
   }
   consultar4(): void {
@@ -116,7 +117,7 @@ export class AppComponent implements OnInit {
         },
         error: (err) => {
           this.objeto = { error: err };
-        },
+        }
       });
   }
 }
