@@ -8,15 +8,23 @@ import { UserProfileComponent } from '../user-profile/user-profile.component';
 import { PlanetListComponent } from '../planet/planet-list/planet-list.component';
 import { ResaltarDirective } from '../directives/resaltar.directive';
 import { CurrencyPipe } from '../pipes/currency.pipe';
+import { FilterPlanetPipe } from '../pipes/filter-planet.pipe';
 
 @NgModule({
-  declarations: [AppComponent, UserProfileComponent, PlanetListComponent, ResaltarDirective, CurrencyPipe],
+  declarations: [
+    AppComponent,
+    UserProfileComponent,
+    PlanetListComponent,
+    ResaltarDirective,
+    CurrencyPipe,
+    FilterPlanetPipe
+  ],
   imports: [BrowserModule, FormsModule, HttpClientModule],
   providers: [
     //LoggerService, // tal cual
     // te pida LoggerService -> Logger2Service
     //{ provide: LoggerService, useClass: Logger2Service },
   ],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

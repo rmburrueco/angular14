@@ -5,11 +5,12 @@ import { PlanetService } from 'src/app/services/planet.service';
 @Component({
   selector: 'app-planet-list',
   templateUrl: './planet-list.component.html',
-  styleUrls: ['./planet-list.component.scss'],
+  styleUrls: ['./planet-list.component.scss']
 })
 export class PlanetListComponent implements OnInit {
   planets: Planet[] = [];
   error = '';
+  searchText = '';
 
   constructor(private planetService: PlanetService) {}
 
@@ -25,7 +26,7 @@ export class PlanetListComponent implements OnInit {
         //http 1
         // websocket N
         console.log('Observable completado');
-      },
+      }
     });
   }
 
